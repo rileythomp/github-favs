@@ -34,7 +34,7 @@
                 <td>{{result.owner}}/{{result.name}}</td>
                 <td>{{result.language}}</td>
                 <td>{{result.tag}}</td>
-                <td ng-click="addFavourite($event)" data-repo={{result}}>Add</td>
+                <td ng-if="result.notFav" ng-click="addFavourite($event)" data-repo={{result}}>Add</td>
               </tr>
             </table>
           </div>

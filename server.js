@@ -52,7 +52,7 @@ async function getSearch(url) {
 }
 
 app.post('/githubsearch', async function (req, res) {
-  var url = 'https://api.github.com/search/repositories?q='+req.body.search+'&per_page=2'
+  var url = 'https://api.github.com/search/repositories?q='+req.body.search+'&per_page=10'
   var results = await getSearch(url)
   res.send({results: results})
 })
