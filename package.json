@@ -1,0 +1,15 @@
+{
+  "name": "shopifychallenge",
+  "version": "1.0.0",
+  "description": "shopify coding challenge",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "rileythomp",
+  "license": "ISC",
+  "keywords": [
+    "shopify"
+  ]
+}

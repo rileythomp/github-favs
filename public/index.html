@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>shopify challenge</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body ng-app="shopifyChallenge" ng-controller="appCtrlr">
+
+    <div>
+
+      <div id="pageHeader">
+        <h1>My Github Favourites</h1>
+      </div>
+
+      <div id="mainContent">
+
+        <div id="searchSide">
+
+          <div id="searchArea">
+            <input ng-model="userSearch" placeholder="Search" type="text" ng-keyup="enterSearch($event)"> <button ng-click="searchGithub(userSearch)">Search</button>
+         </div>
+      
+          <div id="searchResults">
+            <table>
+              <tr>
+                <th>Name</th>
+                <th>Language</th>
+                <th>Latest Tag</th>
+                <th></th>
+              </tr>
+              <tr ng-repeat="(i, result) in results">
+                <td>{{result.owner}}/{{result.name}}</td>
+                <td>{{result.language}}</td>
+                <td>{{tags[i]}}</td>
+                <td>Add</td>
+              </tr>
+            </table>
+          </div>
+
+        </div>
+
+        <div id="favouritesSide">
+          bye
+        </div>
+
+      </div>
+
+    </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js" type="text/javascript"></script>
+  <script src="main.js" type="text/javascript"></script>
+  </body>
+</html>
