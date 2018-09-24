@@ -49,7 +49,7 @@ app.controller('appCtrlr', function($scope, $http) {
 
     $scope.addFavourite = function (e) {
       var newFav = $(e.target).data('repo')
-      var favs = JSON.parse(localStorage.getItem('favourites'))
+      var favs = JSON.parse(localStorage.getItem('favourites')) || []
       favs.push(newFav)
       localStorage.setItem('favourites', JSON.stringify(favs))
       $('#favouritesTable').append($('<tr>')
