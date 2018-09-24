@@ -39,7 +39,7 @@ body {
     height: 3em;
     border-radius: 0.5em;
     border-style: none;
-     
+    border: 1px solid black;
     width: 75%;
     margin-right: 1em;
     text-indent: 1em;

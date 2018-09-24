@@ -19,7 +19,8 @@
         <div id="searchSide">
           <div id="searchArea">
             <input ng-model="userSearch" placeholder="Search" type="text" ng-keyup="enterSearch($event)"> <button ng-click="searchGithub(userSearch)">Search</button>
-         </div>
+            <p ng-if="noResults">No matches were found for your search.</p>
+          </div>
           <div id="searchResults">
             <table id="resultsTable">
               <tr>
@@ -48,15 +49,6 @@
               <th></th>
             </tr>
             <tr></tr>
-            <tr ng-if="favourites" ng-repeat"favourite in favourites">
-              <td>{{favourite.owner}}/{{favourite.name}}</td>
-              <td>{{favourite.language}}</td>
-              <td>{{favourite.tag}}</td>
-              <td ng-click="removeFavourite($event)" data-favourite={{favourite}}>Remove</td>
-            </tr>
-            <tr>
-              <td  ng-click="removeFavourite($event)" data-favourite="{test: data}">hi</td>
-            </tr>
           </table>
         </div>
 
