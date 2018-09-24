@@ -13,6 +13,8 @@ app.controller('appCtrlr', function($scope, $http) {
     }
 
     let githubSearch = function (userSearch) {
+      $scope.noResults = false
+      $scope.maxRequests = false
       $http.post('/githubsearch', {search: userSearch}).then(
         function(res) {
           console.log(res)
@@ -26,7 +28,11 @@ app.controller('appCtrlr', function($scope, $http) {
               repo.notFav = true
             }
           }
-          $scope.results = results
+          if (results.length) {
+            $scope.results = results
+          } else {
+            $scope.noResults = true;
+          }
         },
         function(err) {
           console.log(err)
@@ -40,7 +46,13 @@ app.controller('appCtrlr', function($scope, $http) {
 
     $scope.enterSearch = function (e) {
       if (e.which == 13) {
+        $scope.noResults = false
+        $scope.maxRequests = false
         githubSearch($scope.userSearch)
+      } else if (!$scope.userSearch) {
+        $scope.noResults = false
+        $scope.maxRequests = false
+        $scope.results = []
       }
     }
 
