@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/rileythomp/shopifyCode/issues"
   },
-  "homepage": "https://github.com/rileythomp/shopifyCode#readme"
+  "homepage": "https://github.com/rileythomp/shopifyCode#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {}
 }
