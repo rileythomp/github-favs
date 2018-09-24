@@ -28,7 +28,9 @@ app.controller('appCtrlr', function($scope, $http) {
               repo.notFav = true
             }
           }
-          if (results.length) {
+          if (results[0] == 'N') {
+	    $scope.maxRequests = true
+	  } else if (results.length) {
             $scope.results = results
           } else {
             $scope.noResults = true;

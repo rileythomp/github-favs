@@ -4,7 +4,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 let request = require('request');
-const port = process.env.PORT
+const port = 3000
 
 app.use(express.static(__dirname + '/public'));
 
@@ -47,6 +47,8 @@ async function getSearch(url) {
           results.push(result)
         }
         resolve(results)
+      } else {
+        resolve('Number of API requests exceeded, please try again later.')
       }
     })
   })
