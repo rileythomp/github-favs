@@ -8,7 +8,7 @@
   </head>
   <body ng-app="shopifyChallenge" ng-controller="appCtrlr">
 
-    <div>
+    <div id="wholePage">
 
       <div id="pageHeader">
         <h1>My Github Favourites</h1>
@@ -17,32 +17,47 @@
       <div id="mainContent">
 
         <div id="searchSide">
-
           <div id="searchArea">
             <input ng-model="userSearch" placeholder="Search" type="text" ng-keyup="enterSearch($event)"> <button ng-click="searchGithub(userSearch)">Search</button>
          </div>
-      
           <div id="searchResults">
-            <table>
+            <table id="resultsTable">
               <tr>
                 <th>Name</th>
                 <th>Language</th>
                 <th>Latest Tag</th>
                 <th></th>
               </tr>
-              <tr ng-repeat="(i, result) in results">
+              <tr></tr>
+              <tr ng-repeat="result in results">
                 <td>{{result.owner}}/{{result.name}}</td>
                 <td>{{result.language}}</td>
-                <td>{{tags[i]}}</td>
-                <td>Add</td>
+                <td>{{result.tag}}</td>
+                <td ng-click="addFavourite($event)" data-repo={{result}}>Add</td>
               </tr>
             </table>
           </div>
-
         </div>
 
         <div id="favouritesSide">
-          bye
+          <table id="favouritesTable">
+            <tr>
+              <th>Name</th>
+              <th>Language</th>
+              <th>Latest tag</th>
+              <th></th>
+            </tr>
+            <tr></tr>
+            <tr ng-if="favourites" ng-repeat"favourite in favourites">
+              <td>{{favourite.owner}}/{{favourite.name}}</td>
+              <td>{{favourite.language}}</td>
+              <td>{{favourite.tag}}</td>
+              <td ng-click="removeFavourite($event)" data-favourite={{favourite}}>Remove</td>
+            </tr>
+            <tr>
+              <td  ng-click="removeFavourite($event)" data-favourite="{test: data}">hi</td>
+            </tr>
+          </table>
         </div>
 
       </div>
