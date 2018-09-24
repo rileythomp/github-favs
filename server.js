@@ -29,7 +29,7 @@ async function getSearch(url) {
       headers: {'User-Agent': 'rileythomp'},
       url: url,
       json: true
-    }, function (error, response, body) {
+    }, async function (error, response, body) {
       if (!error && response.statusCode == 200) {
         var results = []
         for (var i = 0; i < body.items.length; ++i) {
