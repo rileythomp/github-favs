@@ -17,7 +17,7 @@ app.controller('appCtrlr', function($scope, $http) {
         function(res) {
           console.log(res)
           var results = res.data.results
-          var savedFavs = JSON.parse(localStorage.getItem('favourites'))
+          var savedFavs = JSON.parse(localStorage.getItem('favourites')) || []
           for (var i = 0; i < results.length; ++i) {
             var repo = results[i]
             if (isFavourite(repo, savedFavs)) {
@@ -74,7 +74,7 @@ app.controller('appCtrlr', function($scope, $http) {
     $('#favouritesTable').on('click', '.favourite', function (e) {
       var savedFavs = JSON.parse(localStorage.getItem('favourites')) || []
       var removedFav = JSON.parse($(e.target).data('favourite').replace(/`/g, '"'))
-      var newFavs = savedFavs.filter(function(el) { return el.name != removedFav.name; }); 
+      var newFavs = savedFavs.filter(function(el) { return el.name != removedFav.name; });
       localStorage.setItem('favourites', JSON.stringify(newFavs))
       $(e.target.parentElement).remove()
     })
