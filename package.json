@@ -11,5 +11,13 @@
   "license": "ISC",
   "keywords": [
     "shopify"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rileythomp/shopifyCode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rileythomp/shopifyCode/issues"
+  },
+  "homepage": "https://github.com/rileythomp/shopifyCode#readme"
 }
