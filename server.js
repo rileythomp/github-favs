@@ -4,6 +4,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 let request = require('request');
+const port = process.env.PORT
 
 app.use(express.static(__dirname + '/public'));
 
@@ -57,6 +58,6 @@ app.post('/githubsearch', async function (req, res) {
   res.send({results: results})
 })
 
-app.listen(3000, function() {
-    console.log('Server listening on port 3000');
+app.listen(port, function() {
+    console.log('Server listening on port '+port+'');
 });

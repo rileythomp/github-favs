@@ -39,7 +39,7 @@ body {
     height: 3em;
     border-radius: 0.5em;
     border-style: none;
-     
+    border: 1px solid black;
     width: 75%;
     margin-right: 1em;
     text-indent: 1em;
@@ -67,6 +67,10 @@ table {
 table td:nth-child(4) {
     color: #7D26CD;
     text-decoration: underline;
+}
+
+table td {
+    padding: 0.5em 0;
 }
 
 #favouritesSide {
