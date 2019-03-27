@@ -43,6 +43,7 @@ async function getSearch(url) {
           result.owner = repo.owner.login
           result.name = repo.name
           result.language = repo.language
+          result.url = repo.clone_url.slice(0, -4)
           result.tag = await getTags(repo.owner.login, repo.name)
           results.push(result)
         }
