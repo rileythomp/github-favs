@@ -4,7 +4,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 let request = require('request');
-const port = process.env.PORT
+const port = process.env.PORT || 2020
 
 app.use(express.static(__dirname + '/public'));
 

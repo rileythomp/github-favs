@@ -13,6 +13,7 @@ app.controller('appCtrlr', function($scope, $http) {
     }
 
     let githubSearch = function (userSearch) {
+      $('.fa-spinner').show()
       $scope.noResults = false
       $scope.maxRequests = false
       $http.post('/githubsearch', {search: userSearch}).then(
@@ -29,12 +30,13 @@ app.controller('appCtrlr', function($scope, $http) {
             }
           }
           if (results[0] == 'N') {
-	    $scope.maxRequests = true
-	  } else if (results.length) {
+	          $scope.maxRequests = true
+	        } else if (results.length) {
             $scope.results = results
           } else {
             $scope.noResults = true;
           }
+          $('.fa-spinner').hide()
         },
         function(err) {
           console.log(err)

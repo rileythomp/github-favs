@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Github Favourites</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="shortcut icon" type="image/x-icon" href="octocat.jpg" />
   </head>
@@ -19,7 +20,7 @@
 
         <div id="searchSide">
           <div id="searchArea">
-            <input ng-model="userSearch" placeholder="Search" type="text" ng-keyup="enterSearch($event)"> <button ng-click="searchGithub(userSearch)">Search</button>
+            <input ng-model="userSearch" placeholder="Search" type="text" ng-keyup="enterSearch($event)"> <button ng-click="searchGithub(userSearch)">Search</button> <i style="display:none; font-size: 1.25rem; margin-left: 2.5rem" class="fa fa-spinner fa-spin"></i>
             <p ng-if="noResults">No matches were found for your search.</p>
             <p ng-if="maxRequests">The number of GitHub API requests has been exceeded, please try again later.</p>
           </div>
