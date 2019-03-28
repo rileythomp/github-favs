@@ -34,7 +34,7 @@
               </tr>
               <tr></tr>
               <tr ng-repeat="result in results">
-                <td><a style="text-decoration:none; color: black" ng-href="{{result.url}}" target="blank">{{result.owner}}/{{result.name}}</a></td>
+                <td><a ng-href="{{result.url}}" target="blank">{{result.owner}}/{{result.name}}</a></td>
                 <td>{{result.language}}</td>
                 <td>{{result.tag}}</td>
                 <td ng-if="result.notFav" ng-click="addFavourite($event)" data-repo={{result}}>Add</td>

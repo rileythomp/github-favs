@@ -77,3 +77,8 @@ table td {
     background-color: #ddd1e7;
     height: 86vh;
 }
+
+a {
+    text-decoration:none;
+    color: black;
+}

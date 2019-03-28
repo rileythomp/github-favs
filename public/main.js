@@ -79,9 +79,9 @@ app.controller('appCtrlr', function($scope, $http) {
     $(document).ready(function () {
       var savedFavs = JSON.parse(localStorage.getItem('favourites')) || []
       for (var i = 0; i < savedFavs.length; ++i) {
-	var savedFav = savedFavs[i]
+        var savedFav = savedFavs[i]
         $('#favouritesTable').append($('<tr>')
-        .append($('<td>').text(savedFav.owner + '/' + savedFav.name))
+        .append($('<td>').html('<a href="'+savedFav.url+'">'+savedFav.owner+'/'+savedFav.name+'</a>'))
         .append($('<td>').text(savedFav.language))
         .append($('<td>').text(savedFav.tag))
         .append($('<td class="favourite" data-favourite="'+JSON.stringify(savedFav).replace(/"/g, "`")+'">').text('Remove')))
