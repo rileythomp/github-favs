@@ -22,6 +22,6 @@ To run locally:
 
 ```$ npm start```
 
-Then go to localhost:2020
+Then go to localhost:2020.
 
 Done as part of Shopify Fall 2018 coding challenge.
