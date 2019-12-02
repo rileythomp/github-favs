@@ -24,4 +24,4 @@ To run locally:
 
 Then go to localhost:2020.
 
-Done as part of Shopify Fall 2018 coding challenge.
+Done as part of a Fall 2018 coding challenge.
